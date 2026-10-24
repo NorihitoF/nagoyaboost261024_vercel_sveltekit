@@ -17,11 +17,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>おみくじ</title>
-	<meta name="description" content="SvelteKit 製のおみくじアプリ" />
-</svelte:head>
-
 <section class="card">
 	<h1>今日の運勢を占う</h1>
 	<p class="lead">おみくじを引くと、結果が自動で記録に残ります。</p>
@@ -37,9 +32,6 @@
 			};
 		}}
 	>
-		<button type="submit" disabled={drawing}>
-			{drawing ? '引いています…' : 'おみくじを引く'}
-		</button>
 	</form>
 
 	{#if form?.result}
@@ -62,10 +54,6 @@
 			前回引いた日時: {new Date(data.lastDrawnAt).toLocaleString('ja-JP')}
 		</p>
 	{/if}
-
-	<p class="note">
-		<a href="/history">おみくじ記録を見る →</a>
-	</p>
 </section>
 
 <style>
